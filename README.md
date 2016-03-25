@@ -32,3 +32,10 @@ PendulumStopwatch* stopwatch = [[PendulumStopwatch alloc] init];
 [stopwatch start];
 ```
 
+## Example app
+
+Here's a screenshot of the example app that has been running for more than two hours:
+
+<p align="center">
+    <img src="http://i.imgur.com/lNACPKR.png" height="400" alt="Platform: iOS 8+"/>
+</p>
