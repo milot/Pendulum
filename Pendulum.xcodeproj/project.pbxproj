@@ -10,6 +10,12 @@
 		171810CD1CA5774100B800D1 /* Pendulum.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 174172251CA42D67007DB032 /* Pendulum.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		173DF18C1CA5345D00F46BFA /* Exo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 173DF18B1CA5345D00F46BFA /* Exo2-Regular.ttf */; };
 		173DF18D1CA53AB300F46BFA /* Pendulum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174172251CA42D67007DB032 /* Pendulum.framework */; };
+		173E585C1CA59BAC00B7C2B6 /* PendulumTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 173E585B1CA59BAC00B7C2B6 /* PendulumTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		173E58611CA59BD200B7C2B6 /* PendulumStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741723F1CA42DE2007DB032 /* PendulumStopwatch.swift */; };
+		173E58621CA59BD200B7C2B6 /* PendulumDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174172411CA42F03007DB032 /* PendulumDelegate.swift */; };
+		173E586B1CA59BEF00B7C2B6 /* PendulumWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 173E586A1CA59BEF00B7C2B6 /* PendulumWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		173E58701CA59BFE00B7C2B6 /* PendulumStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741723F1CA42DE2007DB032 /* PendulumStopwatch.swift */; };
+		173E58711CA59BFE00B7C2B6 /* PendulumDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174172411CA42F03007DB032 /* PendulumDelegate.swift */; };
 		174172291CA42D67007DB032 /* Pendulum.h in Headers */ = {isa = PBXBuildFile; fileRef = 174172281CA42D67007DB032 /* Pendulum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174172301CA42D67007DB032 /* Pendulum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174172251CA42D67007DB032 /* Pendulum.framework */; };
 		174172351CA42D67007DB032 /* PendulumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174172341CA42D67007DB032 /* PendulumTests.swift */; };
@@ -57,6 +63,12 @@
 
 /* Begin PBXFileReference section */
 		173DF18B1CA5345D00F46BFA /* Exo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo2-Regular.ttf"; path = "Resources/Exo2-Regular.ttf"; sourceTree = "<group>"; };
+		173E58591CA59BAC00B7C2B6 /* PendulumTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PendulumTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		173E585B1CA59BAC00B7C2B6 /* PendulumTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PendulumTV.h; sourceTree = "<group>"; };
+		173E585D1CA59BAC00B7C2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		173E58681CA59BEF00B7C2B6 /* PendulumWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PendulumWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		173E586A1CA59BEF00B7C2B6 /* PendulumWatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PendulumWatch.h; sourceTree = "<group>"; };
+		173E586C1CA59BEF00B7C2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		174172251CA42D67007DB032 /* Pendulum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pendulum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		174172281CA42D67007DB032 /* Pendulum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pendulum.h; sourceTree = "<group>"; };
 		1741722A1CA42D67007DB032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +90,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		173E58551CA59BAC00B7C2B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173E58641CA59BEF00B7C2B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174172211CA42D67007DB032 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,12 +138,32 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		173E585A1CA59BAC00B7C2B6 /* PendulumTV */ = {
+			isa = PBXGroup;
+			children = (
+				173E585B1CA59BAC00B7C2B6 /* PendulumTV.h */,
+				173E585D1CA59BAC00B7C2B6 /* Info.plist */,
+			);
+			path = PendulumTV;
+			sourceTree = "<group>";
+		};
+		173E58691CA59BEF00B7C2B6 /* PendulumWatch */ = {
+			isa = PBXGroup;
+			children = (
+				173E586A1CA59BEF00B7C2B6 /* PendulumWatch.h */,
+				173E586C1CA59BEF00B7C2B6 /* Info.plist */,
+			);
+			path = PendulumWatch;
+			sourceTree = "<group>";
+		};
 		1741721B1CA42D67007DB032 = {
 			isa = PBXGroup;
 			children = (
 				174172271CA42D67007DB032 /* Pendulum */,
 				174172331CA42D67007DB032 /* PendulumTests */,
 				174172481CA43F22007DB032 /* Pendulum-Example */,
+				173E585A1CA59BAC00B7C2B6 /* PendulumTV */,
+				173E58691CA59BEF00B7C2B6 /* PendulumWatch */,
 				174172261CA42D67007DB032 /* Products */,
 				DA5BD7D10084CF5147A87676 /* Frameworks */,
 			);
@@ -129,6 +175,8 @@
 				174172251CA42D67007DB032 /* Pendulum.framework */,
 				1741722F1CA42D67007DB032 /* PendulumTests.xctest */,
 				174172471CA43F22007DB032 /* Pendulum-Example.app */,
+				173E58591CA59BAC00B7C2B6 /* PendulumTV.framework */,
+				173E58681CA59BEF00B7C2B6 /* PendulumWatch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +228,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		173E58561CA59BAC00B7C2B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173E585C1CA59BAC00B7C2B6 /* PendulumTV.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173E58651CA59BEF00B7C2B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173E586B1CA59BEF00B7C2B6 /* PendulumWatch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174172221CA42D67007DB032 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +255,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		173E58581CA59BAC00B7C2B6 /* PendulumTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 173E58601CA59BAC00B7C2B6 /* Build configuration list for PBXNativeTarget "PendulumTV" */;
+			buildPhases = (
+				173E58541CA59BAC00B7C2B6 /* Sources */,
+				173E58551CA59BAC00B7C2B6 /* Frameworks */,
+				173E58561CA59BAC00B7C2B6 /* Headers */,
+				173E58571CA59BAC00B7C2B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PendulumTV;
+			productName = PendulumTV;
+			productReference = 173E58591CA59BAC00B7C2B6 /* PendulumTV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		173E58671CA59BEF00B7C2B6 /* PendulumWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 173E586D1CA59BEF00B7C2B6 /* Build configuration list for PBXNativeTarget "PendulumWatch" */;
+			buildPhases = (
+				173E58631CA59BEF00B7C2B6 /* Sources */,
+				173E58641CA59BEF00B7C2B6 /* Frameworks */,
+				173E58651CA59BEF00B7C2B6 /* Headers */,
+				173E58661CA59BEF00B7C2B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PendulumWatch;
+			productName = PendulumWatch;
+			productReference = 173E58681CA59BEF00B7C2B6 /* PendulumWatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		174172241CA42D67007DB032 /* Pendulum */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 174172391CA42D67007DB032 /* Build configuration list for PBXNativeTarget "Pendulum" */;
@@ -256,6 +356,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Milot Shala";
 				TargetAttributes = {
+					173E58581CA59BAC00B7C2B6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					173E58671CA59BEF00B7C2B6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					174172241CA42D67007DB032 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = Q4FVJUH2ZJ;
@@ -285,11 +391,27 @@
 				174172241CA42D67007DB032 /* Pendulum */,
 				1741722E1CA42D67007DB032 /* PendulumTests */,
 				174172461CA43F22007DB032 /* Pendulum-Example */,
+				173E58581CA59BAC00B7C2B6 /* PendulumTV */,
+				173E58671CA59BEF00B7C2B6 /* PendulumWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		173E58571CA59BAC00B7C2B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173E58661CA59BEF00B7C2B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174172231CA42D67007DB032 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +440,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		173E58541CA59BAC00B7C2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173E58611CA59BD200B7C2B6 /* PendulumStopwatch.swift in Sources */,
+				173E58621CA59BD200B7C2B6 /* PendulumDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173E58631CA59BEF00B7C2B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173E58701CA59BFE00B7C2B6 /* PendulumStopwatch.swift in Sources */,
+				173E58711CA59BFE00B7C2B6 /* PendulumDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174172201CA42D67007DB032 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +521,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		173E585E1CA59BAC00B7C2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PendulumTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.milot.PendulumTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		173E585F1CA59BAC00B7C2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PendulumTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.milot.PendulumTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		173E586E1CA59BEF00B7C2B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PendulumWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.milot.PendulumWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		173E586F1CA59BEF00B7C2B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PendulumWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.milot.PendulumWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		174172371CA42D67007DB032 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -563,6 +785,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		173E58601CA59BAC00B7C2B6 /* Build configuration list for PBXNativeTarget "PendulumTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173E585E1CA59BAC00B7C2B6 /* Debug */,
+				173E585F1CA59BAC00B7C2B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		173E586D1CA59BEF00B7C2B6 /* Build configuration list for PBXNativeTarget "PendulumWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173E586E1CA59BEF00B7C2B6 /* Debug */,
+				173E586F1CA59BEF00B7C2B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1741721F1CA42D67007DB032 /* Build configuration list for PBXProject "Pendulum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
