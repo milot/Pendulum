@@ -2,6 +2,8 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat" alt="Platform: iOS 8+"/>
+    <img src="https://img.shields.io/badge/platform-tvOS%209%2B-blue.svg" alt="Platform: tvOS 9+"/>    
+    <img src="https://img.shields.io/badge/platform-watchOS%202.2-blue.svg" alt="Platform: watchOS 2.2"/>        
     <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Language: Swift 2" /></a></a>
      <br><br>
 </p>
