@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
 
 
   s.homepage     = "http://milot.io/"
-  s.license      = "MIT"
+  s.license = { :type => "MIT", :file => "LICENSE.md" }
 
   s.author             = { "Milot Shala" => "milot.shala@gmail.com" }
   s.social_media_url   = "http://twitter.com/milot"
 
-  s.source       = { :git => "http://github.com/milot/Pendulum.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/milot/Pendulum.git", :tag => "#{s.version}" }
 
   s.source_files = "Pendulum/*.{swift}"
 
