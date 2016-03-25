@@ -14,9 +14,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PendulumTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>PendulumWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>173E58581CA59BAC00B7C2B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>173E58671CA59BEF00B7C2B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>174172241CA42D67007DB032</key>
 		<dict>
 			<key>primary</key>
