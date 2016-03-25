@@ -1,4 +1,32 @@
 # Pendulum
-Pendulum is a stopwatch framework that implements a little neat feature for a stopwatch timer on iOS.
 
-The problem on iOS is that you don't have access to a timer that runs on background if the app is not active, while working on a project and in need of this feature I had to add something like that to my already existing Stopwatch class that I've been using, what I am doing on the Stopwatch is that I record the time when the Stopwatch started and once the app runs again it compares the current time with the previously stored time and continues to run from that NSTimeInterval.
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat" alt="Platform: iOS 8+"/>
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Language: Swift 2" /></a></a>
+     <br><br>
+</p>
+
+## Introduction
+
+Pendulum is a small stopwatch framework that implements a little neat feature for a stopwatch timer on iOS.
+
+The problem on iOS is that you don't have access to an NSTimer that runs in the background, all you get is 3 minutes of running timer until the app is killed by the OS. Pendulum stores the start time on NSUserDefaults and when you re-open the app it calculates time between current time and stored time in order to continue running where it left off.
+
+#####Usage
+
+For more detailed usage, please check both PendulumTests and PendulumProtocolTests also there is a Pendulum-Example written in Swift.
+
+For basic usage, please refer to the two examples below:
+
+######Swift
+``` swift
+let stopwatch = PendulumStopwatch()
+stopwatch.start()
+```
+
+######Objective-C
+``` objective-c
+PendulumStopwatch* stopwatch = [[PendulumStopwatch alloc] init];
+[stopwatch start];
+```
+
