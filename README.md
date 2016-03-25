@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Pendulum is a small stopwatch framework that implements a little neat feature for a stopwatch timer on iOS.
+Pendulum is a small stopwatch framework that implements a little neat feature for a stopwatch timer on iOS, tvOS and watchOS.
 
 The problem on iOS is that you don't have access to an NSTimer that runs in the background, all you get is 3 minutes of running timer until the app is killed by the OS. Pendulum stores the start time on NSUserDefaults and when you re-open the app it calculates time between current time and stored time in order to continue running where it left off.
 
