@@ -21,18 +21,11 @@ The problem on iOS is that you don't have access to an NSTimer that runs in the 
 ####CocoaPods Installation
 Pendulum is available on [CocoaPods](http://cocoapods.org). Simply add the following to your project Podfile, and you'll be good to go.
 
-######Objective-C
 ``` ruby
 use_frameworks!
 
 pod 'Pendulum'
 ``` 
-######Swift
-```ruby
-use_frameworks!
-
-pod 'Pendulum'
-```
 
 ####Manual Installation
 
