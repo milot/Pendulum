@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pendulum_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K60-ya-9js">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="254"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvk-29-Kor">
+                                        <rect key="frame" x="8" y="8" width="584" height="246"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="246" id="Fu4-yj-q4K"/>
+                                            <constraint firstAttribute="width" constant="584" id="YG0-Ie-qIX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Kvk-29-Kor" firstAttribute="centerY" secondItem="K60-ya-9js" secondAttribute="centerY" constant="4" id="4Mk-Ep-kXP"/>
+                                    <constraint firstItem="Kvk-29-Kor" firstAttribute="centerX" secondItem="K60-ya-9js" secondAttribute="centerX" id="MQf-Zv-JiA"/>
+                                    <constraint firstItem="Kvk-29-Kor" firstAttribute="top" secondItem="K60-ya-9js" secondAttribute="top" constant="8" id="vGg-aX-Rwe"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efI-aw-7UP">
+                                <rect key="frame" x="250" y="262" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="tiJ-g0-COl"/>
+                                    <constraint firstAttribute="height" constant="100" id="zlb-oQ-FW3"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e73-0k-MEN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K60-ya-9js" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="B4h-jS-9fM"/>
+                            <constraint firstItem="K60-ya-9js" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QhX-X9-LtW"/>
+                            <constraint firstItem="efI-aw-7UP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="niX-Ea-yel"/>
+                            <constraint firstItem="efI-aw-7UP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="12" id="rvf-7i-AnR"/>
+                            <constraint firstAttribute="trailing" secondItem="K60-ya-9js" secondAttribute="trailing" id="zeq-PS-TsK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="startStopButton" destination="efI-aw-7UP" id="VzI-yQ-b8z"/>
+                        <outlet property="timerLabel" destination="Kvk-29-Kor" id="RP9-9q-M3h"/>
+                        <outlet property="topTimerView" destination="K60-ya-9js" id="4Xj-JI-k7Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="387"/>
+        </scene>
+    </scenes>
+</document>
