@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/platform-tvOS%209%2B-blue.svg" alt="Platform: tvOS 9+"/>    
     <img src="https://img.shields.io/badge/platform-watchOS%202.2-blue.svg" alt="Platform: watchOS 2.2"/>        
     <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Language: Swift 2" /></a></a>
-    <a href="https://github.com/milot/Pendulum"><img src="https://img.shields.io/badge/pod-v1.0.1-orange.svg" alt="CocoaPods compatible" /></a>
+    <a href="https://github.com/milot/Pendulum/releases/tag/1.0.1"><img src="https://img.shields.io/badge/pod-v1.0.1-orange.svg" alt="CocoaPods compatible" /></a>
     <img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT" />
      <br><br>
 </p>
