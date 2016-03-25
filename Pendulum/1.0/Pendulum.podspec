@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
 
   s.homepage     = "http://milot.io/"
-  s.license = { :type => "MIT", :file => "LICENSE" }
+  s.license = { :type => "MIT", :file => "LICENSE.md" }
 
   s.author             = { "Milot Shala" => "milot.shala@gmail.com" }
   s.social_media_url   = "http://twitter.com/milot"
