@@ -51,7 +51,12 @@ PendulumStopwatch* stopwatch = [[PendulumStopwatch alloc] init];
 ```
 
 ## Example app
+######Running the app
 
+In order to run the app, please run **pod install** first.
+
+
+######Screenshot
 Here's a screenshot of the example app that has been running for more than two hours:
 
 <p align="center">

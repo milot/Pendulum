@@ -9,9 +9,8 @@
 import Foundation
 
 public class PendulumStopwatch: NSObject {
-	public internal(set) var startDate: NSDate?
+	public internal(set) var startTime: NSDate?
 	public internal(set) var isPaused: Bool = false
-	
 	internal var timer: NSTimer?
 	internal var timePassedWhileOnPause: NSTimeInterval!
 	
@@ -23,7 +22,7 @@ public class PendulumStopwatch: NSObject {
 	
 	private func startRunningFrom(offset offset: NSTimeInterval) {
 		timePassedWhileOnPause = isPaused ? timePassedWhileOnPause + offset : offset
-		startDate = NSDate()
+		startTime = NSDate()
 		create()
 		isPaused = false
 	}
@@ -44,7 +43,7 @@ public class PendulumStopwatch: NSObject {
 			startRunningFrom(offset: timeIntervalBetween)
 		} else {
 			startRunningFrom(offset: 0)
-			NSUserDefaults.standardUserDefaults().setObject(startDate, forKey:"pendulumStartTime")
+			NSUserDefaults.standardUserDefaults().setObject(startTime, forKey:"pendulumStartTime")
 		}
 	}
 	
@@ -52,14 +51,14 @@ public class PendulumStopwatch: NSObject {
 		destroy()
 		isPaused = false
 		timePassedWhileOnPause = 0
-		startDate = nil
+		startTime = nil
 		NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"pendulumStartTime")
 	}
 	
 	public func pause() {
 		destroy()		
-		timePassedWhileOnPause = timePassed
-		startDate = nil
+		timePassedWhileOnPause = timePassedSince
+		startTime = nil
 		isPaused = true
 	}
 	
@@ -78,25 +77,6 @@ public class PendulumStopwatch: NSObject {
 				}
 			}
 		}
-	}
-	
-	public var timePassed: NSTimeInterval {
-		var currentTimeInterval: NSTimeInterval = 0
-		
-		if let startDate = self.startDate {
-			currentTimeInterval = NSDate().timeIntervalSinceDate(startDate)
-		}
-		
-		return timePassedWhileOnPause + currentTimeInterval
-	}
-	
-	public var isActive: Bool {
-		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
-		return startTime != nil
-	}
-	
-	public var isStopped: Bool {
-		return !isActive && timePassedWhileOnPause == 0
 	}
 	
 	public func refreshTriggered() {
@@ -120,5 +100,24 @@ public class PendulumStopwatch: NSObject {
 	private func destroy() {
 		timer?.invalidate()
 		timer = nil
+	}
+	
+	public var timePassedSince: NSTimeInterval {
+		var currentTimeInterval: NSTimeInterval = 0
+		
+		if let startDate = self.startTime {
+			currentTimeInterval = NSDate().timeIntervalSinceDate(startDate)
+		}
+		
+		return timePassedWhileOnPause + currentTimeInterval
+	}
+	
+	public var isActive: Bool {
+		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
+		return startTime != nil
+	}
+	
+	public var isStopped: Bool {
+		return !isActive && timePassedWhileOnPause == 0
 	}
 }
