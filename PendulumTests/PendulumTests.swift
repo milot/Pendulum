@@ -43,11 +43,7 @@ class PendulumTests: XCTestCase {
 	func testStartIfPreviouslyRunning() {
 		let stopwatch = PendulumStopwatch()
 		stopwatch.continueIfPreviouslyRunning()
-		XCTAssert(stopwatch.isActive, "Should not be active!")
-		
-//		stopwatch.start()
-//		stopwatch.startIfPreviouslyRunning()
-//		XCTAssert(stopwatch.isActive, "Should be active as it was created")
+		XCTAssert(stopwatch.isActive, "Should be active!")
 		
 		stopwatch.stop()
 		XCTAssert(stopwatch.isActive == false, "Should not be active after stop!")
@@ -68,17 +64,14 @@ class PendulumTests: XCTestCase {
 	
 	func testContinuity() {
 		let stopwatch = PendulumStopwatch()
-		stopwatch.start()
-		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
-		
-		XCTAssert(startTime != nil, "pendulumStartTime should not be nil")
-		XCTAssert(stopwatch.isActive, "Should be active and running")
-		XCTAssert(stopwatch.startTime != nil, "Start date should not be nil")
-		while stopwatch.timePassedSince < 1 {}
-		XCTAssert(stopwatch.timePassedSince > 1, "Should be running already")
+		stopwatch.continueIfPreviouslyRunning()
+		let startTime1 = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
+		XCTAssert(startTime1 != nil, "pendulumStartTime should not be nil at this point")
+		XCTAssert(stopwatch.isActive, "Active")
 		
 		while stopwatch.timePassedSince < 10 {}
-		XCTAssert(NSDate().timeIntervalSinceDate(startTime) > 10, "Should be more than 10")
+		XCTAssert(stopwatch.timePassedSince > 10, "Should be running already")
+		stopwatch.stop()
 		
 	}
 	

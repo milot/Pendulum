@@ -9,14 +9,13 @@
 @testable import Pendulum
 
 class PendulumObserver: PendulumDelegate {
-	var refreshCounter = 0
 	
-	func refreshInterval(stopwatch: PendulumStopwatch) -> NSTimeInterval {
+	
+	func pendulumRefreshInterval(stopwatch: PendulumStopwatch) -> NSTimeInterval {
 		return 0.3
 	}
 	
-	func stopwatchDidRefresh(stopwatch: PendulumStopwatch) {
-		refreshCounter += 1
-		print("Refresh Count: \(refreshCounter)")
+	func pendulumRefreshed(stopwatch: PendulumStopwatch) {
+		print("Refreshed")
 	}
 }

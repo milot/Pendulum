@@ -23,7 +23,7 @@ public class PendulumStopwatch: NSObject {
 	private func startRunningFrom(offset offset: NSTimeInterval) {
 		timePassedWhileOnPause = isPaused ? timePassedWhileOnPause + offset : offset
 		startTime = NSDate()
-		create()
+		initiateTimer()
 		isPaused = false
 	}
 	
@@ -37,18 +37,17 @@ public class PendulumStopwatch: NSObject {
 	
 	public func start() {
 		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
-		
 		if (startTime != nil) {
 			let timeIntervalBetween = NSDate().timeIntervalSinceDate(startTime)
 			startRunningFrom(offset: timeIntervalBetween)
 		} else {
 			startRunningFrom(offset: 0)
-			NSUserDefaults.standardUserDefaults().setObject(startTime, forKey:"pendulumStartTime")
+			NSUserDefaults.standardUserDefaults().setObject(self.startTime, forKey:"pendulumStartTime")
 		}
 	}
 	
 	public func stop() {
-		destroy()
+		invalidateTimer()
 		isPaused = false
 		timePassedWhileOnPause = 0
 		startTime = nil
@@ -56,48 +55,31 @@ public class PendulumStopwatch: NSObject {
 	}
 	
 	public func pause() {
-		destroy()		
+		invalidateTimer()		
 		timePassedWhileOnPause = timePassedSince
 		startTime = nil
 		isPaused = true
 	}
 	
-	public weak var delegate: PendulumDelegate? {
-		didSet {
-			if isActive {
-				create()
-				
-				// re-create timer
-				if oldValue == nil && delegate != nil {
-					create()
-					
-					// destroy if no delegate present
-				} else if delegate == nil {
-					destroy()
-				}
-			}
-		}
+	public func timerRefreshTriggered() {
+		delegate?.pendulumRefreshed(self)
 	}
 	
-	public func refreshTriggered() {
-		delegate?.stopwatchDidRefresh(self)
-	}
-	
-	private func create() {
-		destroy()
+	private func initiateTimer() {
+		invalidateTimer()
 		
 		guard delegate != nil else {
 			return
 		}
 		
-		if let refreshInterval = delegate?.refreshInterval(self) {
-			let _timer = NSTimer(timeInterval: refreshInterval, target: self, selector: #selector(refreshTriggered), userInfo: nil, repeats: true)
+		if let refreshInterval = delegate?.pendulumRefreshInterval(self) {
+			let _timer = NSTimer(timeInterval: refreshInterval, target: self, selector: #selector(timerRefreshTriggered), userInfo: nil, repeats: true)
 			timer = _timer
 			NSRunLoop.mainRunLoop().addTimer(_timer, forMode: NSRunLoopCommonModes)
 		}
 	}
 	
-	private func destroy() {
+	private func invalidateTimer() {
 		timer?.invalidate()
 		timer = nil
 	}
@@ -113,11 +95,28 @@ public class PendulumStopwatch: NSObject {
 	}
 	
 	public var isActive: Bool {
-		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
-		return startTime != nil
+		return self.startTime != nil
 	}
 	
 	public var isStopped: Bool {
+		
 		return !isActive && timePassedWhileOnPause == 0
+	}
+	
+	public weak var delegate: PendulumDelegate? {
+		didSet {
+			if isActive {
+				initiateTimer()
+				
+				// re-create timer
+				if oldValue == nil && delegate != nil {
+					initiateTimer()
+					
+					// destroy if no delegate present
+				} else if delegate == nil {
+					invalidateTimer()
+				}
+			}
+		}
 	}
 }
