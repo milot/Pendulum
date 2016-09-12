@@ -11,6 +11,14 @@ import Pendulum
 import ChameleonFramework
 
 class ViewController: UIViewController, PendulumDelegate {
+	public func pendulumRefreshInterval(_ stopwatch: PendulumStopwatch) -> TimeInterval {
+		return 1
+	}
+
+	public func pendulumRefreshed(_ stopwatch: PendulumStopwatch) {
+		timerLabel.text = timeStringFull(stopwatch.timePassedSince)
+	}
+
 	@IBOutlet weak var topTimerView: UIView!
 	@IBOutlet weak var timerLabel: UILabel!
 	@IBOutlet weak var startStopButton: UIButton!
@@ -26,7 +34,7 @@ class ViewController: UIViewController, PendulumDelegate {
 		setupUI()
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		if stopwatch.isActive {
 			animateBorderIn(startStopButton)
 		}
@@ -38,9 +46,9 @@ class ViewController: UIViewController, PendulumDelegate {
 	}
 	
 	func setupUI() {
-		self.view.backgroundColor = GradientColor(.TopToBottom, frame: self.view.frame, colors: [UIColor(red:0.19, green:0.20, blue:0.22, alpha:1.00), UIColor(red:0.20, green:0.22, blue:0.24, alpha:1.00)])
+		self.view.backgroundColor = GradientColor(.topToBottom, frame: self.view.frame, colors: [UIColor(red:0.19, green:0.20, blue:0.22, alpha:1.00), UIColor(red:0.20, green:0.22, blue:0.24, alpha:1.00)])
 		
-		topTimerView.backgroundColor = GradientColor(.TopToBottom, frame: self.view.frame, colors: [UIColor(red:0.16, green:0.17, blue:0.18, alpha:1.00), UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.00)])
+		topTimerView.backgroundColor = GradientColor(.topToBottom, frame: self.view.frame, colors: [UIColor(red:0.16, green:0.17, blue:0.18, alpha:1.00), UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.00)])
 		
 		timerLabel.font = UIFont(name: "Exo2-Regular", size: 38)
 		
@@ -48,21 +56,21 @@ class ViewController: UIViewController, PendulumDelegate {
 		startStopButton.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.00)
 		startStopButton.clipsToBounds = true;
 		startStopButton.layer.cornerRadius = startStopButton.frame.size.width/2
-		startStopButton.layer.borderColor = UIColor(hexString: "#fc4a4e").CGColor
+		startStopButton.layer.borderColor = UIColor(hexString: "#fc4a4e").cgColor
 		startStopButton.layer.borderWidth = 0
 		
 		
 	}
 	
 	
-	func animateBorderIn(view: UIView) {
+	func animateBorderIn(_ view: UIView) {
 		if let button = view as? UIButton {
-			button.setTitle("Stop", forState: .Normal)
+			button.setTitle("Stop", for: UIControlState())
 		}
 		
 		let color:CABasicAnimation = CABasicAnimation(keyPath: "borderColor")
-		color.fromValue = UIColor(hexString: "#fc4a4e").CGColor
-		color.toValue = UIColor(hexString: "#fc4a4e").CGColor
+		color.fromValue = UIColor(hexString: "#fc4a4e").cgColor
+		color.toValue = UIColor(hexString: "#fc4a4e").cgColor
 		
 		let Width:CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
 		Width.fromValue = 0
@@ -75,17 +83,17 @@ class ViewController: UIViewController, PendulumDelegate {
 		both.animations = [color,Width]
 		both.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
 		
-		view.layer.addAnimation(both, forKey: "color and Width")
+		view.layer.add(both, forKey: "color and Width")
 	}
 	
-	func animateBorderOutOf(view: UIView) {
+	func animateBorderOutOf(_ view: UIView) {
 		if let button = view as? UIButton {
-			button.setTitle("Start", forState: .Normal)
+			button.setTitle("Start", for: UIControlState())
 		}
 		
 		let color:CABasicAnimation = CABasicAnimation(keyPath: "borderColor")
-		color.fromValue = UIColor(hexString: "#fc4a4e").CGColor
-		color.toValue = UIColor(hexString: "#fc4a4e").CGColor
+		color.fromValue = UIColor(hexString: "#fc4a4e").cgColor
+		color.toValue = UIColor(hexString: "#fc4a4e").cgColor
 		
 		let width:CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
 		
@@ -103,10 +111,10 @@ class ViewController: UIViewController, PendulumDelegate {
 		both.animations = [color,width]
 		both.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
 		
-		view.layer.addAnimation(both, forKey: "color and Width")
+		view.layer.add(both, forKey: "color and Width")
 	}
 	
-	func timeStringFull(interval:NSTimeInterval) -> String {
+	func timeStringFull(_ interval:TimeInterval) -> String {
 		let interval = Int(interval)
 		let seconds = interval % 60
 		let minutes = (interval / 60) % 60
@@ -114,7 +122,7 @@ class ViewController: UIViewController, PendulumDelegate {
 		return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
 	}
 	
-	@IBAction func startStopButtonTapped(sender: AnyObject) {
+	@IBAction func startStopButtonTapped(_ sender: AnyObject) {
 		if !stopwatch.isActive {
 			stopwatch.start()
 			animateBorderIn(startStopButton)
@@ -122,14 +130,6 @@ class ViewController: UIViewController, PendulumDelegate {
 			stopwatch.stop()
 			animateBorderOutOf(startStopButton)
 		}
-	}
-	
-	func refreshInterval(stopwatch: PendulumStopwatch) -> NSTimeInterval {
-		return 1
-	}
-	
-	func stopwatchDidRefresh(stopwatch: PendulumStopwatch) {
-		timerLabel.text = timeStringFull(stopwatch.timePassed)
 	}
 	
 }

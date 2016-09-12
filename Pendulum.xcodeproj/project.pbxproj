@@ -250,6 +250,8 @@
 			<dict>
 				<key>CLANG_ANALYZER_NONNULL</key>
 				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -275,7 +277,7 @@
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>3</string>
 				<key>TVOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>9.1</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -288,6 +290,8 @@
 			<dict>
 				<key>CLANG_ANALYZER_NONNULL</key>
 				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -313,7 +317,7 @@
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>3</string>
 				<key>TVOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>9.1</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -329,6 +333,8 @@
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -493,6 +499,8 @@
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -504,6 +512,8 @@
 				<string>YES</string>
 				<key>CLANG_ANALYZER_NONNULL</key>
 				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -544,6 +554,8 @@
 				<string>YES</string>
 				<key>CLANG_ANALYZER_NONNULL</key>
 				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -614,7 +626,7 @@
 				<key>LastSwiftUpdateCheck</key>
 				<string>0730</string>
 				<key>LastUpgradeCheck</key>
-				<string>0720</string>
+				<string>0800</string>
 				<key>ORGANIZATIONNAME</key>
 				<string>Milot Shala</string>
 				<key>TargetAttributes</key>
@@ -635,11 +647,15 @@
 						<string>7.2.1</string>
 						<key>DevelopmentTeam</key>
 						<string>Q4FVJUH2ZJ</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
 					</dict>
 					<key>1741722E1CA42D67007DB032</key>
 					<dict>
 						<key>CreatedOnToolsVersion</key>
 						<string>7.2.1</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
 					</dict>
 					<key>174172461CA43F22007DB032</key>
 					<dict>
@@ -647,6 +663,8 @@
 						<string>7.2.1</string>
 						<key>DevelopmentTeam</key>
 						<string>Q4FVJUH2ZJ</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
 					</dict>
 				</dict>
 			</dict>
@@ -1032,10 +1050,14 @@
 				<string>YES</string>
 				<key>CLANG_WARN_ENUM_CONVERSION</key>
 				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
 				<key>CLANG_WARN_INT_CONVERSION</key>
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
 				<key>CLANG_WARN_UNREACHABLE_CODE</key>
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
@@ -1123,10 +1145,14 @@
 				<string>YES</string>
 				<key>CLANG_WARN_ENUM_CONVERSION</key>
 				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
 				<key>CLANG_WARN_INT_CONVERSION</key>
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
 				<key>CLANG_WARN_UNREACHABLE_CODE</key>
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
@@ -1165,6 +1191,8 @@
 				<string>NO</string>
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Owholemodule</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 				<key>VALIDATE_PRODUCT</key>
@@ -1201,6 +1229,8 @@
 				<string>YES</string>
 				<key>CODE_SIGN_IDENTITY</key>
 				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -1214,7 +1244,7 @@
 				<key>INSTALL_PATH</key>
 				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>9.1</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -1225,6 +1255,8 @@
 				<string>YES</string>
 				<key>SWIFT_OPTIMIZATION_LEVEL</key>
 				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1239,6 +1271,8 @@
 				<string>YES</string>
 				<key>CODE_SIGN_IDENTITY</key>
 				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string></string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
@@ -1252,7 +1286,7 @@
 				<key>INSTALL_PATH</key>
 				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>9.1</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -1261,6 +1295,8 @@
 				<string>$(TARGET_NAME)</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1293,6 +1329,8 @@
 				<string>io.milot.PendulumTests</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1311,6 +1349,8 @@
 				<string>io.milot.PendulumTests</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1452,6 +1492,7 @@
 				<string>174172501CA43F22007DB032</string>
 				<string>174172521CA43F22007DB032</string>
 				<string>174172551CA43F22007DB032</string>
+				<string>176D3E651D86DA3A0075DAAD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1618,7 +1659,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>Pendulum-Example/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>9.1</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -1629,6 +1670,8 @@
 				<string>Pendulum-Example/Pendulum-Example-Bridging-Header.h</string>
 				<key>SWIFT_OPTIMIZATION_LEVEL</key>
 				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1648,7 +1691,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>Pendulum-Example/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
+				<string>9.1</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -1657,6 +1700,8 @@
 				<string>$(TARGET_NAME)</string>
 				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
 				<string>Pendulum-Example/Pendulum-Example-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1702,6 +1747,17 @@
 			<string>1741725B1CA43FF6007DB032</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>176D3E651D86DA3A0075DAAD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pendulum-Example-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>4E69A7194DD73F095675A6B1</key>
 		<dict>

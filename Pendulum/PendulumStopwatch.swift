@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class PendulumStopwatch: NSObject {
-	public internal(set) var startTime: NSDate?
-	public internal(set) var isPaused: Bool = false
-	internal var timer: NSTimer?
-	internal var timePassedWhileOnPause: NSTimeInterval!
+open class PendulumStopwatch: NSObject {
+	open internal(set) var startTime: Date?
+	open internal(set) var isPaused: Bool = false
+	internal var timer: Timer?
+	internal var timePassedWhileOnPause: TimeInterval!
 	
 	public override init() {
 		super.init()
@@ -20,52 +20,52 @@ public class PendulumStopwatch: NSObject {
 		timePassedWhileOnPause = 0
 	}
 	
-	private func startRunningFrom(offset offset: NSTimeInterval) {
+	fileprivate func startRunningFrom(offset: TimeInterval) {
 		timePassedWhileOnPause = isPaused ? timePassedWhileOnPause + offset : offset
-		startTime = NSDate()
+		startTime = Date()
 		initiateTimer()
 		isPaused = false
 	}
 	
-	public func continueIfPreviouslyRunning() {
-		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
+	open func continueIfPreviouslyRunning() {
+		let startTime = UserDefaults.standard.object(forKey: "pendulumStartTime") as! Date!
 		if (startTime != nil) {
-			let timeIntervalBetween = NSDate().timeIntervalSinceDate(startTime)
+			let timeIntervalBetween = Date().timeIntervalSince(startTime!)
 			startRunningFrom(offset: timeIntervalBetween)
 		}
 	}
 	
-	public func start() {
-		let startTime = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
+	open func start() {
+		let startTime = UserDefaults.standard.object(forKey: "pendulumStartTime") as! Date!
 		if (startTime != nil) {
-			let timeIntervalBetween = NSDate().timeIntervalSinceDate(startTime)
+			let timeIntervalBetween = Date().timeIntervalSince(startTime!)
 			startRunningFrom(offset: timeIntervalBetween)
 		} else {
 			startRunningFrom(offset: 0)
-			NSUserDefaults.standardUserDefaults().setObject(self.startTime, forKey:"pendulumStartTime")
+			UserDefaults.standard.set(self.startTime, forKey:"pendulumStartTime")
 		}
 	}
 	
-	public func stop() {
+	open func stop() {
 		invalidateTimer()
 		isPaused = false
 		timePassedWhileOnPause = 0
 		startTime = nil
-		NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"pendulumStartTime")
+		UserDefaults.standard.set(nil, forKey:"pendulumStartTime")
 	}
 	
-	public func pause() {
+	open func pause() {
 		invalidateTimer()		
 		timePassedWhileOnPause = timePassedSince
 		startTime = nil
 		isPaused = true
 	}
 	
-	public func timerRefreshTriggered() {
+	open func timerRefreshTriggered() {
 		delegate?.pendulumRefreshed(self)
 	}
 	
-	private func initiateTimer() {
+	fileprivate func initiateTimer() {
 		invalidateTimer()
 		
 		guard delegate != nil else {
@@ -73,37 +73,37 @@ public class PendulumStopwatch: NSObject {
 		}
 		
 		if let refreshInterval = delegate?.pendulumRefreshInterval(self) {
-			let _timer = NSTimer(timeInterval: refreshInterval, target: self, selector: #selector(timerRefreshTriggered), userInfo: nil, repeats: true)
+			let _timer = Timer(timeInterval: refreshInterval, target: self, selector: #selector(timerRefreshTriggered), userInfo: nil, repeats: true)
 			timer = _timer
-			NSRunLoop.mainRunLoop().addTimer(_timer, forMode: NSRunLoopCommonModes)
+			RunLoop.main.add(_timer, forMode: RunLoopMode.commonModes)
 		}
 	}
 	
-	private func invalidateTimer() {
+	fileprivate func invalidateTimer() {
 		timer?.invalidate()
 		timer = nil
 	}
 	
-	public var timePassedSince: NSTimeInterval {
-		var currentTimeInterval: NSTimeInterval = 0
+	open var timePassedSince: TimeInterval {
+		var currentTimeInterval: TimeInterval = 0
 		
 		if let startDate = self.startTime {
-			currentTimeInterval = NSDate().timeIntervalSinceDate(startDate)
+			currentTimeInterval = Date().timeIntervalSince(startDate)
 		}
 		
 		return timePassedWhileOnPause + currentTimeInterval
 	}
 	
-	public var isActive: Bool {
+	open var isActive: Bool {
 		return self.startTime != nil
 	}
 	
-	public var isStopped: Bool {
+	open var isStopped: Bool {
 		
 		return !isActive && timePassedWhileOnPause == 0
 	}
 	
-	public weak var delegate: PendulumDelegate? {
+	open weak var delegate: PendulumDelegate? {
 		didSet {
 			if isActive {
 				initiateTimer()

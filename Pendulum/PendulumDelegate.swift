@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol PendulumDelegate: class {
-	func pendulumRefreshInterval(stopwatch: PendulumStopwatch) -> NSTimeInterval
-	func pendulumRefreshed(stopwatch: PendulumStopwatch)
+	func pendulumRefreshInterval(_ stopwatch: PendulumStopwatch) -> TimeInterval
+	func pendulumRefreshed(_ stopwatch: PendulumStopwatch)
 }

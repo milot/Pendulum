@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Pendulum
+import Pendulum
 
 class PendulumTests: XCTestCase {
 	
@@ -65,7 +65,7 @@ class PendulumTests: XCTestCase {
 	func testContinuity() {
 		let stopwatch = PendulumStopwatch()
 		stopwatch.continueIfPreviouslyRunning()
-		let startTime1 = NSUserDefaults.standardUserDefaults().objectForKey("pendulumStartTime") as! NSDate!
+		let startTime1 = UserDefaults.standard.object(forKey: "pendulumStartTime") as! Date!
 		XCTAssert(startTime1 != nil, "pendulumStartTime should not be nil at this point")
 		XCTAssert(stopwatch.isActive, "Active")
 		
@@ -93,7 +93,7 @@ class PendulumTests: XCTestCase {
 	
 	func testPerformanceExample() {
 		// This is an example of a performance test case.
-		self.measureBlock {
+		self.measure {
 			// Put the code you want to measure the time of here.
 		}
 	}

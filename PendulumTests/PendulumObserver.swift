@@ -11,11 +11,11 @@
 class PendulumObserver: PendulumDelegate {
 	
 	
-	func pendulumRefreshInterval(stopwatch: PendulumStopwatch) -> NSTimeInterval {
+	func pendulumRefreshInterval(_ stopwatch: PendulumStopwatch) -> TimeInterval {
 		return 0.3
 	}
 	
-	func pendulumRefreshed(stopwatch: PendulumStopwatch) {
+	func pendulumRefreshed(_ stopwatch: PendulumStopwatch) {
 		print("Refreshed")
 	}
 }

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.summary = "Pendulum is a small stopwatch framework that implements a little neat feature for a stopwatch timer on iOS, tvOS and watchOS."
   s.requires_arc = true
 
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
 
   s.homepage     = "http://milot.io/"
